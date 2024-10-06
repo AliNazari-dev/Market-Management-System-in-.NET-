@@ -5,9 +5,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super market Managment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" /> 
 </head>
 <body>
-  <div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <!-- Brand Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="https://via.placeholder.com/40" alt="Logo" class="d-inline-block align-text-top">
+                    My Website
+                </a>
+                <!-- Toggler/collapsible Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/categories/index">Categories</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+  <div class="container">
       @RenderBody();
   </div>
 </body>
