@@ -1,13 +1,17 @@
-﻿@section title{
+﻿@using WebApp.Models;
+@model List<Category>;
+
+@section title{
     <h3>categories page </h3>
 
 }
 <br />
 <ul>
-    <li>
-        <a href="/categories/edit/1">Beverage</a>
-    </li>
-    <li>
-        <a href="/categories/edit/2">Meat</a>
-    </li>
+    @foreach(var category in Model)
+    {
+        <li>
+            @category.Name
+        </li>
+      
+    }
 </ul>
