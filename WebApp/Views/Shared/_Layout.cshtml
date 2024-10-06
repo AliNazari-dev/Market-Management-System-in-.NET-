@@ -35,7 +35,10 @@
         </nav>
     </header>
   <div class="container">
-      @RenderBody();
+      <div class="pb-3">
+          @RenderSection("title",false)
+      </div>
+      @RenderBody()
   </div>
 </body>
 </html>
