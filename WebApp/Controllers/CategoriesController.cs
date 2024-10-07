@@ -11,10 +11,13 @@ namespace WebApp.Controllers
             return View(categories);
         }
 
-        public IActionResult Edit([FromQuery]int? id)
+        public IActionResult Edit(int? id)
         {
-            var category = new Category { CategoryId = id.HasValue ? id.Value : 0 };
+            //var category = new Category { CategoryId = id.HasValue ? id.Value : 0 };
+            //return View(category);
+            var category = CategoriesRepository.GetCategoryById(id.HasValue ? id.Value : 0);
             return View(category);
+
         }
     }
 }
