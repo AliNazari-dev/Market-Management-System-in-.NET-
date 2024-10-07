@@ -32,6 +32,8 @@
         }
 
 
+
+
         public static void UpdateCategory(int categoryId, Category category)
         {
             if (categoryId != category.CategoryId) return;
@@ -52,5 +54,6 @@
                 _categories.Remove(category);
             }
         }
+       
     }
 }
