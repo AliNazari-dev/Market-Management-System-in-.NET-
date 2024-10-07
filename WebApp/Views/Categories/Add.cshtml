@@ -8,8 +8,12 @@
     }
 
 }
+@* Without partial View *@
 
-<form method="post" asp-controller="categories" asp-action="Add">
+@* <form method="post" asp-controller="categories" asp-action="Add">
+    <input type="hidden" asp-for="CategoryId"></input>
+    <div class="text-danger" asp-validation-summary="All"></div>
+
     <div class="col-2">
         <label asp-for="Name" class="col-form-label"></label>
     </div>
@@ -19,7 +23,7 @@
     <div class="col">
         <div class="text-danger" asp-validation-for="Name"></div>
     </div>
-    <div class="col-2">
+    <div class="col-2 ">
         <label asp-for="Description" class="col-form-label"></label>
     </div>
     <div class="col-6">
@@ -28,4 +32,7 @@
     <div class="col-6">
         <input type="submit" class="btn btn-primary" value="update" />
     </div>
-</form>
+</form> *@
+
+
+<partial name="_Category" model="@Model" />

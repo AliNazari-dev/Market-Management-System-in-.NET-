@@ -16,20 +16,27 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult Add(int? id)
         {
+            ViewBag.Action = "add";
             return View();
         }
 
         [HttpPost]
         public IActionResult Add(Category category)
         {
-            CategoriesRepository.AddCategory(category);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                CategoriesRepository.AddCategory(category);
+                return RedirectToAction("Index");
+            }
+            return View(category);
+
         }
 
         // Edit category (GET and POST)
         [HttpGet]
         public IActionResult Edit(int? id)
         {
+            ViewBag.Action = "edit";
             var category = CategoriesRepository.GetCategoryById(id ?? 0);
             return View(category);
         }
