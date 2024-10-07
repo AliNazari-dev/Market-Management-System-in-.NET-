@@ -10,7 +10,7 @@ namespace WebApp.Controllers
             var categories = CategoriesRepository.GetCategories();
             return View(categories);
         }
-
+        [HttpGet]
         public IActionResult Edit(int? id)
         {
             //var category = new Category { CategoryId = id.HasValue ? id.Value : 0 };
@@ -18,6 +18,13 @@ namespace WebApp.Controllers
             var category = CategoriesRepository.GetCategoryById(id.HasValue ? id.Value : 0);
             return View(category);
 
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            CategoriesRepository.UpdateCategory(category.CategoryId,category);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -11,6 +11,7 @@
 }
 
 <form method="post" asp-controller="categories" asp-action="edit">
+    <input type="hidden" asp-for="CategoryId" ></input>
     <div class="row mb-3 flex flex-column">
         <div class="col-2"> 
             <label asp-for="Name" class="col-form-label"></label>
@@ -19,19 +20,13 @@
             <input type="text" asp-for="Name" class="form-control"></input>
         </div>
         <div class="col-2">
-            <label asp-for="CategoryId" class="col-form-label"></label>
-        </div>
-        <div class="col-6">
-            <input type="number" asp-for="CategoryId" class="form-control"></input>
-        </div>
-        <div class="col-2">
             <label asp-for="Description" class="col-form-label"></label>
         </div>
         <div class="col-6">
             <input type="text" asp-for="Description" class="form-control"></input>
         </div>
-    </div>
+    </div> 
     <div class="col-6">
-        <button type="submit" class="btn btn-primary">ADD</input>
+        <input type="submit" class="btn btn-primary" value="ADD" />
     </div>
 </form>
